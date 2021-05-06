@@ -1,0 +1,58 @@
+
+    {% load static %}
+<!doctype html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        {% if title %}
+            <title>CCU - {{ title }}</title>
+        {% else %}
+            <title>CCU - Examination</title>
+        {% endif %}
+
+        <!-- <link href="{% static 'exam/plugins/font-awesome/css/font-awesome.css' %}" rel="stylesheet" type="text/css" /> -->
+        <link href="{% static 'exam/plugins/fontawesome5/css/all.min.css' %}" rel="stylesheet" type="text/css" />
+
+        <link href="{% static 'exam/icons.min.css' %}" rel="stylesheet" type="text/css" />
+
+        <link href="{% static 'exam/plugins/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'exam/style.css' %}" rel="stylesheet" type="text/css" />
+
+        <link href="{% static 'exam/theme.min.css' %}" rel="stylesheet" type="text/css" />
+
+        <style>
+            .page-content {
+                padding: calc(25px + 24px) calc(24px / 2) 70px calc(24px / 2);
+                }
+        </style>
+    </head>
+    <body>
+
+        <div class="mt-5">
+            <section class="appointment">
+                    <div class="container text-center">
+                      <div class="row">
+                        <div class="col-md-12 col-lg-7 mx-auto">
+                          <div class="card border-0 shadow-sm">
+                            <div class="card-body border-top border-md border-success p-5">
+                                    <h2>You have been logged out</h2>
+                                    <div class="border-top pt-3">
+                                        <small class="text-muted">
+                                            <a href="{% url 'students-login' %}">Log in Again</a>
+                                        </small>
+                                    </div>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        
+                        
+                      </div>
+                    </div>
+                  </section>
+                </div>
+    
+    </body>
+    </html>
