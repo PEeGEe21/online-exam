@@ -9,8 +9,13 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
+
 import os
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -35,6 +40,8 @@ INSTALLED_APPS = [
     'lecturers.apps.LecturersConfig',
     'students.apps.StudentsConfig',
     'crispy_forms',
+    'ckeditor',
+    'cloudinary',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -84,6 +91,11 @@ DATABASES = {
     }
 }
 
+    # CLOUDINARY_CLOUD_NAME: 'sample',
+    # CLOUDINARY_API_KEY: '874837483274837',
+    # CLOUDINARY_API_SECRET: 'a676b67565c6767a6767d6767f676fe1'
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -129,6 +141,8 @@ MEDIA_URL = '/media/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'exam'),
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

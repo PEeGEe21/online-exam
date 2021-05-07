@@ -2,7 +2,8 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
-
+from ckeditor.fields import RichTextField
+from cloudinary.models import CloudinaryField
 
 
 DEPT = (
@@ -53,7 +54,9 @@ class Student(models.Model):
 
 class Exam(models.Model):
     id = models.AutoField(primary_key=True)
-    question = models.TextField()
+    question = RichTextField(default='')
+    image = models.ImageField('image')
+    # question = models.TextField()
     course = models.CharField('Course', max_length=20, default='')
     option1 = models.CharField(max_length=100)
     option2 = models.CharField(max_length=100)

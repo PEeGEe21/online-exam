@@ -1,10 +1,13 @@
 from django import forms
 from django.contrib.auth.models import User
 from exam.models import Teacher
+from exam.models import Exam
 from django.db import models
 from .models import Profile
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import TeacherCreationForm
+from ckeditor.fields import RichTextField
+
 
 
 DEPT = (
@@ -50,3 +53,23 @@ class ProfileUpdateForm(forms.ModelForm):
         fields = [
             'image'
         ]
+
+
+class ExamCreateForm(forms.ModelForm):
+    class Meta:
+        model = Exam
+        fields = '__all__'
+        # fields = ('question', 'course', 'option1', 'option2', 'option3', 'option4', 'answer', 'score' )
+        template_name = 'lecturers/exam_form.html'
+
+        widgets = {
+            'question': RichTextField(),
+            # 'course': forms.TextInput(attrs={'class': 'input-form trans-bg'}),
+            # 'option1': forms.TextInput(attrs={'class': 'input-form trans-bg'}),
+            # 'option2': forms.TextInput(attrs={'class': 'input-form trans-bg'}),
+            # 'option3': forms.TextInput(attrs={'class': 'input-form trans-bg'}),
+            # 'option4': forms.TextInput(attrs={'class': 'input-form trans-bg'}),
+            # 'answer': forms.TextInput(attrs={'class': 'input-form trans-bg'}),
+            # 'score': forms.TextInput(attrs={'class': 'input-form trans-bg'}),
+            
+        }

@@ -29,7 +29,7 @@ class TeacherAdmin(admin.ModelAdmin):
 
 @admin.register(Exam)
 class ExamAdmin(admin.ModelAdmin):
-    list_display = ('id', 'course', 'question', 'option1', 'option2', 'option3', 'option4', 'answer', 'score')
+    list_display = ('id', 'course', 'question', 'image', 'option1', 'option2', 'option3', 'option4', 'answer', 'score')
 
 
 @admin.register(Paper)

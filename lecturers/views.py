@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
 from django.http import HttpResponse
 from exam.models import models
+from .forms import ExamCreateForm
 from django.db import models
 from django.views.generic import ListView, CreateView
 from exam.models import Student, Paper, Teacher, Exam
@@ -130,7 +131,7 @@ def profile(request):
 
 class ExamCreateView(CreateView):
     model = Exam
-    fields = '__all__'
+    form_class = ExamCreateForm
     template_name = 'lecturers/exam_form.html'
 
     def form_valid(self, form):
